@@ -68,11 +68,9 @@ def categorypage(request, slug):
     category_excel = pd.read_excel(filename,sheet_name='H2_categoryCode',names = ['Category'],usecols=[3])
     category = category_excel.values.tolist()
     print(category)
-    for i in category:
-         Category.objects.create(name=i,slug =i)
-
-
-
+    for i in range(len(category)):
+        a = str(*category[i])
+        Category.objects.create(name=a,slug =a)
 
     if slug == 'no_category':
         category = '미분류'
@@ -118,9 +116,4 @@ def myTravel(request):
         'main/myTravel.html',
         {'mytravel':mytravel}
     )
-
-
-    
-
-
 
