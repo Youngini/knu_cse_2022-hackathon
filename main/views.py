@@ -7,6 +7,8 @@ from django.shortcuts import render,redirect
 from django.db import models
 from .models import TourSpot,Category
 from django.views.decorators.csrf import csrf_exempt
+import pandas as pd
+
 
 # Create your views here.
 
@@ -61,6 +63,16 @@ def index(request):
 #카테고리별
 def categorypage(request, slug):
     tourspots = TourSpot.objects.all()
+
+    filename = 'open_api.xlsx'
+    category_excel = pd.read_excel(filename,sheet_name='H2_categoryCode',names = ['Category'],usecols=[3])
+    category = category_excel.values.tolist()
+    print(category)
+    for i in category:
+         Category.objects.create(name=i,slug =i)
+
+
+
 
     if slug == 'no_category':
         category = '미분류'
