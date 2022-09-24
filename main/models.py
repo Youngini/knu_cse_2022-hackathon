@@ -16,9 +16,6 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
-
-
-
 class TourSpot(models.Model):
     place = models.CharField(max_length=30)
     location = models.CharField(max_length=100)
