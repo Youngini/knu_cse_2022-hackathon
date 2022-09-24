@@ -16,14 +16,16 @@
     <hr />
     {% for p in tourspots %}
         <h4><a href="{{ p.get_absolute_urls }}">{{ p.place }}</a></h4>
+        {{ p.id }}
         <h5>{{ p.location }}</h5>
 
-        {% if p.like is True %}
-        <!--<input type="button" id="like"> like <br>-->
+
         {% csrf_token %}
-        <button type="button" id = "like">좋아요</button>
+        {% if p.like is True %}
+            <!--<input type="button" id="like"> like <br>-->
+            <button type="button" class = "like" name = "{{ p.id }}">좋아요</button>
         {% else %}
-        <input type="button" name="like" value="False"> like <br>
+            <button type="button" class = "unlike" name = "{{ p.id }}">싫어요</button>
         {% endif %}
 
     {% endfor %}

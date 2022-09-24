@@ -1,10 +1,12 @@
 from http.client import HTTPResponse
 import json
+from django.http import JsonResponse
 from unicodedata import category
 from django.views.generic import View
 from django.shortcuts import render,redirect
 from django.db import models
 from .models import TourSpot,Category
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -15,25 +17,36 @@ def landing(request):
         'main/main.html'
     )
 
-class ajaxEX(View):
-    def get(self,request):
-        text = request.GET.get('button_text')
-        print()
-        print(text)
-        return render(
-        request,
-        'main/main.html'
-    )
 
 # 전체 대표관광지 리스트
+@csrf_exempt
 def index(request):
     tourspots = TourSpot.objects.all()
     categories = Category.objects.all()
 
-    text = request.POST.get('like_text')
-    print()
-    print(text)
-    
+    if request.method == "POST":
+        text = request.POST.get('like_text')
+        pk = request.POST.get('pk')
+        item = TourSpot.objects.get(pk=pk)
+
+
+        if item.like ==False:
+            item.like = True
+            item.save()
+            context = {
+                'like':item.like,
+                'like_text' : "싫어요",
+            }
+        else:
+            item.like = False
+            item.save()
+            context = {
+                'like':item.like,
+                'like_text' : "좋아요",
+            }
+
+        return JsonResponse(context,status=200)
+
     
     return render(
         request,
@@ -83,20 +96,17 @@ def singlepage(request,pk):
     )
 
 #좋아요한 여행지
-def edit_like(request):
-    likes = TourSpot.objects.all()
-    if request.method == 'POST':
-        if len(request.POST.getlist('like'))==0:
-            like = False
-        else:
-            like = True
-        likes.like = like
-        likes.save()
+def myTravel(request):
+    
 
-        context = {'like':likes.like}
-        print(context)
+    mytravel = TourSpot.objects.filter(like = True)
 
-        return HTTPResponse(json.dumps(context),content_type="application/json")
+    return render(
+        request,
+        'main/myTravel.html',
+        {'mytravel':mytravel}
+    )
+
 
     
 

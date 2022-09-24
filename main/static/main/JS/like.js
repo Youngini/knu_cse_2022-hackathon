@@ -1,27 +1,3 @@
-
-/**$('#like').onclick(function(){
-    var pk = $(this).attr('place')
-    let likeVal = 1
-
-    $.ajax({
-        url : pk,
-        type : 'POST',
-        data :{'pk':pk,'likeVal':likeVal},
-
-        success:function(response){
-            $('#like').html(response.second)
-        },
-        error:function(){
-            ElementInternals('실패');
-        }
-
-    })
-
-
-
-})**/
-
-
 $(document).ready(function(){
 
     $("#btn").click(function(){
@@ -39,18 +15,24 @@ $(document).ready(function(){
         });
     });
 
+});
 
 
 
-
-    $("#like").click(function(){
+window.onload = function(){
+    $(".like").click(function(){
+        var pk = $(this).attr('name');
         $.ajax({
-            url : '',
+            url : 'tourSpot',
             type : 'POST',
-            data :{like_text: $(this).text()},
+            dataType:'json',
+            data :{
+                'like_text': $(this).text(),
+                'pk' : pk
+            },
     
             success:function(response){
-                $('#like').text(response.second)
+                $('.like').text(response.second)
             },
             error:function(){
                 ElementInternals('실패');
@@ -59,4 +41,27 @@ $(document).ready(function(){
     });
 
 
-});
+
+    $(".unlike").click(function(){
+        var pk = $(this).attr('name');
+        $.ajax({
+            url : 'tourSpot',
+            type : 'POST',
+            dataType:'json',
+            data :{
+                'like_text': $(this).text(),
+                'pk' : pk
+            },
+    
+            success:function(response){
+                $('.unlike').text(response.second)
+            },
+            error:function(){
+                ElementInternals('실패');
+            }
+        });
+    });
+
+
+
+}
