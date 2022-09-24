@@ -19,6 +19,11 @@ def landing(request):
         'main/main.html'
     )
 
+def map(request):
+    return render(
+        request,
+        'main/map.html'
+    )
 
 # 전체 대표관광지 리스트
 @csrf_exempt
@@ -64,16 +69,6 @@ def index(request):
 def categorypage(request, slug):
     tourspots = TourSpot.objects.all()
 
-    filename = 'open_api.xlsx'
-    category_excel = pd.read_excel(filename,sheet_name='H2_categoryCode',names = ['Category'],usecols=[3])
-    category = category_excel.values.tolist()
-    print(category)
-    for i in category:
-         Category.objects.create(name=i,slug =i)
-
-
-
-
     if slug == 'no_category':
         category = '미분류'
         category_posts = TourSpot.objects.filter(category = None)
@@ -99,7 +94,6 @@ def categorypage(request, slug):
 # 대표관광지 상세
 def singlepage(request,pk):
     tourspot = TourSpot.objects.get(pk=pk)
-
     return render(
         request,
         'main/singlepage.html',{
@@ -109,8 +103,6 @@ def singlepage(request,pk):
 
 #좋아요한 여행지
 def myTravel(request):
-    
-
     mytravel = TourSpot.objects.filter(like = True)
 
     return render(

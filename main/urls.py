@@ -9,5 +9,6 @@ urlpatterns = [
     path('tourSpot/<int:pk>/',views.singlepage),
     path("tourSpot/category/<slug>/", views.categorypage),
     path('tourSpot/my/',views.myTravel),
+    path('tourSpot/map',views.map),
     #path('tourSpot/my',views.editLike,name='editLike'),
 ]
