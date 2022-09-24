@@ -26,7 +26,6 @@ def index(request):
     tourspots = TourSpot.objects.all()
     categories = Category.objects.all()
 
-
     if request.method == "POST":
         text = request.POST.get('like_text')
         pk = request.POST.get('pk')
@@ -49,11 +48,6 @@ def index(request):
 
         return JsonResponse(context,status=200)
 
-    
-    
- 
-
-
     return render(
         request,
         'main/index.html',
@@ -68,7 +62,7 @@ def index(request):
 def categorypage(request, slug):
     tourspots = TourSpot.objects.all()
 
-      # 엑셀에서 카테고리 데이터 가져오기
+    # 엑셀에서 카테고리 데이터 가져오기
     filename = 'open_api.xlsx'
     category_excel = pd.read_excel(filename,sheet_name='H2_categoryCode',names = ['Category'],usecols=[3])
     category = category_excel.values.tolist()
@@ -76,7 +70,7 @@ def categorypage(request, slug):
     for i in range(len(category)):
         a = str(*category[i])
         Category.objects.create(name=a,slug =a)
-        
+
     # 엑셀에서 카테고리에 맞는 장소 가져오기
     place_excel = pd.read_excel(filename,sheet_name='H3_areaBasedList',usecols=[1])
     place_cate_excel = pd.read_excel(filename,sheet_name='H3_areaBasedList',usecols=[6])
