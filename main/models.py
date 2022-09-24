@@ -4,8 +4,8 @@ from django.db import models
 # Create your models here.
 
 class Category(models.Model):
-    name = models.CharField(max_length=50, unique = True)
-    slug = models.SlugField(max_length=200, unique = True, allow_unicode=True)
+    name = models.CharField(max_length=300, unique = True)
+    slug = models.SlugField(max_length=300, unique = True, allow_unicode=True)
 
     def __str__(self):
         return self.name
@@ -16,11 +16,14 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
+
+
 class TourSpot(models.Model):
     place = models.CharField(max_length=30)
     location = models.CharField(max_length=100)
     category = models.ForeignKey(Category, null = True, blank = True, on_delete = models.SET_NULL)
-    
+    mapX = models.DecimalField(max_digits=15,decimal_places=6,default=0)
+    mapY = models.DecimalField(max_digits=15,decimal_places=6,default=0)
     like = models.BooleanField(default=False)
     
     def __str__(self):
@@ -30,7 +33,11 @@ class TourSpot(models.Model):
         return f'/tourSpot/{self.pk}/'
 
     
+class CSVtest(models.Model):
+    name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
 
 
 
