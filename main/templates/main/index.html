@@ -12,13 +12,26 @@
     {% for cate in categories %}
     <h5><a href="{{ cate.get_absolute_url }}">{{cate}}</a></h5>
     {% endfor %}
-    
-    <hr/>
+
+    <hr />
     {% for p in tourspots %}
-    <h4><a href="{{ p.get_absolute_urls }}">{{ p.place }}</a></h4>
-    <h5>{{ p.location }}</h5>
+        <h4><a href="{{ p.get_absolute_urls }}">{{ p.place }}</a></h4>
+        <h5>{{ p.location }}</h5>
+
+        {% if p.like is True %}
+        <!--<input type="button" id="like"> like <br>-->
+        {% csrf_token %}
+        <button type="button" id = "like">좋아요</button>
+        {% else %}
+        <input type="button" name="like" value="False"> like <br>
+        {% endif %}
+
     {% endfor %}
 
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src= "static/main/JS/like.js"></script>
 </body>
 
 </html>

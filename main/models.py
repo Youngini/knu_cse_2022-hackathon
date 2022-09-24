@@ -23,6 +23,7 @@ class TourSpot(models.Model):
     place = models.CharField(max_length=30)
     location = models.CharField(max_length=100)
     category = models.ForeignKey(Category, null = True, blank = True, on_delete = models.SET_NULL)
+    like = models.BooleanField(default=False)
     
     def __str__(self):
         return self.place

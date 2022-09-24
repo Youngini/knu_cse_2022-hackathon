@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TourSpot</title>
+</head>
+
+<body>
+    <h1>내가 좋아요한 여행지</h1>
+
+    <hr/>
+    {% for p in likes %}
+    <h4><a href="{{ p.get_absolute_urls }}">{{ p.place }}</a></h4>
+    <h5>{{ p.location }}</h5>
+    {% endfor %}
+
+</body>
+
+</html>

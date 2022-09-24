@@ -1,6 +1,8 @@
+from http.client import HTTPResponse
+import json
 from unicodedata import category
-from django.views.generic import ListView
-from django.shortcuts import render
+from django.views.generic import View
+from django.shortcuts import render,redirect
 from django.db import models
 from .models import TourSpot,Category
 
@@ -13,10 +15,26 @@ def landing(request):
         'main/main.html'
     )
 
+class ajaxEX(View):
+    def get(self,request):
+        text = request.GET.get('button_text')
+        print()
+        print(text)
+        return render(
+        request,
+        'main/main.html'
+    )
+
 # 전체 대표관광지 리스트
 def index(request):
     tourspots = TourSpot.objects.all()
     categories = Category.objects.all()
+
+    text = request.POST.get('like_text')
+    print()
+    print(text)
+    
+    
     return render(
         request,
         'main/index.html',
@@ -63,5 +81,24 @@ def singlepage(request,pk):
             'tourspot':tourspot,
         }
     )
+
+#좋아요한 여행지
+def edit_like(request):
+    likes = TourSpot.objects.all()
+    if request.method == 'POST':
+        if len(request.POST.getlist('like'))==0:
+            like = False
+        else:
+            like = True
+        likes.like = like
+        likes.save()
+
+        context = {'like':likes.like}
+        print(context)
+
+        return HTTPResponse(json.dumps(context),content_type="application/json")
+
+    
+
 
 
