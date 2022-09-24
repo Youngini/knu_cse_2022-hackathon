@@ -19,6 +19,11 @@ def landing(request):
         'main/main.html'
     )
 
+def map(request):
+    return render(
+        request,
+        'main/map.html'
+    )
 
 # 전체 대표관광지 리스트
 @csrf_exempt
@@ -126,7 +131,6 @@ def categorypage(request, slug):
 # 대표관광지 상세
 def singlepage(request,pk):
     tourspot = TourSpot.objects.get(pk=pk)
-
     return render(
         request,
         'main/singlepage.html',{
@@ -136,7 +140,6 @@ def singlepage(request,pk):
 
 #좋아요한 여행지
 def myTravel(request):
-
 
     mytravel = TourSpot.objects.filter(like = True)
 
