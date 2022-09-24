@@ -25,6 +25,7 @@ class TourSpot(models.Model):
     mapX = models.DecimalField(max_digits=15,decimal_places=6,default=0)
     mapY = models.DecimalField(max_digits=15,decimal_places=6,default=0)
     like = models.BooleanField(default=False)
+    options = models.ManyToManyField("Option")
     
     def __str__(self):
         return self.place
@@ -32,12 +33,11 @@ class TourSpot(models.Model):
     def get_absolute_urls(self):
         return f'/tourSpot/{self.pk}/'
 
+class Option(models.Model):
+    name = models.CharField(max_length=30)
     
-class CSVtest(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
+    class Meta:
+        db_table = "option"
 
 
 

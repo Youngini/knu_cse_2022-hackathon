@@ -20,10 +20,16 @@ def landing(request):
     )
 
 def map(request):
+    mytravel = TourSpot.objects.filter(like = True)
     return render(
         request,
-        'main/map.html'
+        'main/map.html',{
+        'mytravel':mytravel
+        }
     )
+    
+
+
 
 # 전체 대표관광지 리스트
 @csrf_exempt
