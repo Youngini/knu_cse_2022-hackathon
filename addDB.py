@@ -8,14 +8,12 @@ django.setup()
 
 from main.models import Category,TourSpot,Option
 
-
 def main():
     with open('category.csv' ,encoding='UTF8') as in_file:
         data_reader = csv.reader(in_file)
         next(data_reader,None)
         for row in data_reader:
             categories = Category.objects.all()
-            print(row)
             if len(row)==0: continue
             if row not in categories:
                 Category.objects.create(
@@ -42,6 +40,21 @@ def main():
                         like = False
                     )
 
+<<<<<<< HEAD
+=======
+    with open('withTrouble.csv',encoding='UTF8')as in_file:
+        data_reader = csv.reader(in_file)
+        next(data_reader,None)
+
+        for row in data_reader:
+            print(row)
+            if len(row)==0:continue
+            for col in range(1,len(row)-1):
+                if len(row[col])==0:continue
+                Option.objects.create(
+                    tourspot = TourSpot.objects.get(place = row[0]),
+                    name = row[col],
+>>>>>>> de810ca98161f47993748f057658cf9424fa5fcd
                 )
 
 

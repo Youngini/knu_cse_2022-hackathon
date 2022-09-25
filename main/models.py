@@ -18,6 +18,9 @@ class Category(models.Model):
 
 
 
+
+
+
 class TourSpot(models.Model):
     place = models.CharField(max_length=30)
     location = models.CharField(max_length=100)
@@ -25,7 +28,6 @@ class TourSpot(models.Model):
     mapX = models.DecimalField(max_digits=15,decimal_places=6,default=0)
     mapY = models.DecimalField(max_digits=15,decimal_places=6,default=0)
     like = models.BooleanField(default=False)
-    options = models.ManyToManyField("Option")
     
     def __str__(self):
         return self.place
@@ -33,11 +35,12 @@ class TourSpot(models.Model):
     def get_absolute_urls(self):
         return f'/tourSpot/{self.pk}/'
 
+
+
 class Option(models.Model):
+    tourspot = models.ForeignKey(TourSpot, on_delete = models.CASCADE , null=True)
     name = models.CharField(max_length=30)
-    
-    class Meta:
-        db_table = "option"
+
 
 
 

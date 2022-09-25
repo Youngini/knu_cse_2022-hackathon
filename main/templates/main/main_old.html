@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+   <link rel="stylesheet" href="/static/main/bootstrap/bootstrap.css"> <!--부트스트랩 불러옴-->
+    <style>
+
+    </style>
+  </head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    
+      <a class="navbar-brand" href="#"> <b><font size="5px">WithTour</font></b>  <font size="3px"> with 이니수니</font></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/tourSpot">Category</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          
+        </form>
+        <button onclick = "location.href='tourSpot/my/'" src ="/_image/free-icon-mypage.png"></button>
+        <a href="https://www.flaticon.com/kr/free-icons/" title="사람 아이콘"></a>
+      </div>
+
+  </nav>
+
+    어깨아파
+
+    <button onclick="location.href='tourSpot/my/'">내가 좋아요한 여행지</button >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/main/bootstrap/bootstrap.js"></script>
+    <script src= "static/main/JS/like.js"></script>
+</body>
+</html>
