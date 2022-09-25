@@ -5,7 +5,7 @@ from unicodedata import category
 from django.views.generic import View
 from django.shortcuts import render,redirect
 from django.db import models
-from .models import TourSpot,Category
+from .models import TourSpot,Category,Option
 from django.views.decorators.csrf import csrf_exempt
 import pandas as pd
 
@@ -98,11 +98,14 @@ def categorypage(request, slug):
 
 # 대표관광지 상세
 def singlepage(request,pk):
-    tourspot = TourSpot.objects.get(pk=pk)
+    Tourspot = TourSpot.objects.get(pk=pk)
+    loc = TourSpot.objects.get(place = Tourspot.place)
+    options = Option.objects.filter(tourspot = loc)
     return render(
         request,
         'main/singlepage.html',{
-            'tourspot':tourspot,
+            'tourspot':Tourspot,
+            'options':options
         }
     )
 
