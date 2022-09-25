@@ -2,141 +2,249 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/main/bootstrap/bootstrap.css">
-    <title>TourSpot</title>
-    <style>
-    h3{
-        margin-left: 2em;
-        margin-top: 2em;
-        margin-bottom: 2em;
-        border-radius: 5em; 
-        padding: 0.5em; 
-        display: inline-block;
-        background: #dcf1fb
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Category</title>
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="../../static/main/bootstrap/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/main/bootstrap/bootstrap.css">
+  <!--부트스트랩 불러옴-->
+
+  <style>
+    div.row {
+      height: 100%;
+      display: center;
     }
 
-    h4{
-            margin-left: 2em;
-            margin-top: 1em;
-            border-radius: 2em; 
-            padding: 0.5em; 
-            display: inline-block;
-            background: #d0d2d2f1
-        }
+    div.top {
+      height: 80%;
+      float: top;
+      box-sizing: border-box;
+    }
 
-    </style>
+    div.bottom {
+      height: 20%;
+      float: bottom;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><h3>WithTour</h3></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1:8000/tourSpot">Category</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="http://127.0.0.1:8000" style="color:black">With Tour</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000" style="color:black">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/tourSpot"
+              style="color:black">Tourlist</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/tourSpot/my" style="color:black">My
+              Travel</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    
-    <h4> 카테고리 - {{category}} </h4>
 
-    <div class="card-group" style="margin-left: 2em; margin-right:3wm; margin: 4em;">
 
-            <div class="card">
-                <img src="https://thumbnails.production.thenounproject.com/RLt4QKZgT0Jb0N3Zl-PPCQTjG_Q=/fit-in/1000x1000/photos.production.thenounproject.com/photos/korean_man_in_hanbok_performing_while_other_men_playing_drums_outdoor-scopio-4622_NhggvpG.jpg" class="card-img-top" alt="..." style="width: 15em; height:11em ;">
-                <div class="card-body">
-                    <h5 class="card-title">문화</h5>
-                    <p class="card-text">산림욕, 예술작품 관람 등 다양한 문화 활동을 해보는 것은 어떨까요?</p>
-                    <a href="http://127.0.0.1:8000/tourSpot/category/%EB%AC%B8%ED%99%94/" class="btn btn-primary" style="text-align: center; position: relative;"> 문화 더보기</a>
-                </div>
-            </div>
+
+
+
+  <section class="projects-section bg-light">
+
+    <div class="container px-4 px-lg-5">
+
+      <h4>카테고리</h4>
+
+      <div class="card-group" style="margin-left: 2em; margin-right:2em;">
 
         <div class="card">
-            <img src="https://thumbnails.production.thenounproject.com/h6cVO95aIynep0PURKQFYbB0Dhk=/fit-in/1000x1000/photos.production.thenounproject.com/photos/5E84DAC3-59B0-4B3F-AD1B-02171F1E7D6C.jpg" class="card-img-top" alt="..." style="width: 15em; height:11em ;">
+          <img
+            src="https://thumbnails.production.thenounproject.com/RLt4QKZgT0Jb0N3Zl-PPCQTjG_Q=/fit-in/1000x1000/photos.production.thenounproject.com/photos/korean_man_in_hanbok_performing_while_other_men_playing_drums_outdoor-scopio-4622_NhggvpG.jpg"
+            class="card-img-top" alt="..." style="width: 15em; height:11em ;">
+          <div class="row">
             <div class="card-body">
-              <h5 class="card-title">레포츠</h5>
-              <p class="card-text"> leisure + sport 즉 leiport는 여가를 즐기며 운동을 하는 것입니다. 즐겁게 운동 한판 어떠세요? </p>
-              <a href="http://127.0.0.1:8000/tourSpot/category/%EB%A0%88%ED%8F%AC%EC%B8%A0/" class="btn btn-primary" style="text-align: center;">레포츠 더보기</a>
+              <div class="top">
+                <h5 class="card-title">문화</h5>
+                <p class="card-text">산림욕, 예술작품 관람 등 다양한 문화 활동을 해보는 것은 어떨까요?</p>
+              </div>
+              <div class="bottom">
+                <a href="http://127.0.0.1:8000/tourSpot/category/%EB%AC%B8%ED%99%94/" class="btn btn-primary"
+                  style="text-align: center; position: relative;"> 문화 더보기</a>
+              </div>
             </div>
           </div>
-
-          <div class="card">
-            <img src="https://thumbnails.production.thenounproject.com/LqTpboMw1p13RzzoN5P9e8-XpoE=/fit-in/1000x1000/photos.production.thenounproject.com/photos/5EF0B57C-1B8F-414C-BAD8-82516E8C94B8.jpg" class="card-img-top" alt="..." style="width: 15em; height:11em ;">
-            <div class="card-body">
-              <h5 class="card-title">쇼핑</h5>
-              <p class="card-text"> 이것도 사고싶고, 저것도 사고싶고 놀러온 김에 하고 싶은 쇼핑을 즐겨봅시다!             
-                <a href="http://127.0.0.1:8000/tourSpot/category/%EC%87%BC%ED%95%91/" class="btn btn-primary" style="text-align: center;">쇼핑 더보기</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="https://thumbnails.production.thenounproject.com/qpGNRyGXHfIPCky9tJ4JT2W_cIw=/fit-in/1000x1000/photos.production.thenounproject.com/photos/11281306-34FE-4B32-996A-B4EECD4C3794.jpg" class="card-img-top" alt="..." style="width: 15em; height:11em ;">
-            <div class="card-body">
-              <h5 class="card-title">음식</h5>
-              <p class="card-text">식도락을 떠나보시는건 어떠신가요?</p>
-              <a href="http://127.0.0.1:8000/tourSpot/category/%EC%9D%8C%EC%8B%9D/" class="btn btn-primary" style="text-align: center;">음식 더보기</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="https://thumbnails.production.thenounproject.com/wv3aTxDARKL3m0ssm_o2hYSNzrU=/fit-in/1000x1000/photos.production.thenounproject.com/photos/CE174C4D-2C37-4105-A8C7-41468AEB761A.jpg" class="card-img-top" alt="..." style="width: 15em; height:11em ;">
-            <div class="card-body">
-              <h5 class="card-title">숙박</h5>
-              <p class="card-text"> 호캉스를 좋아하신다면 쾌적한 호텔에서 하룻밤 어떠신가요?</p>
-              <a href="http://127.0.0.1:8000/tourSpot/category/%EC%88%99%EB%B0%95/" class="btn btn-primary" style="text-align: center;">숙박 더보기</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="https://thumbnails.production.thenounproject.com/XsC1nyTE5CjRqQW5l388bcsG59M=/fit-in/1000x1000/photos.production.thenounproject.com/photos/6B81E5C4-1A90-47BC-9ADB-84705491723D.jpg" class="card-img-top" alt="..." style="width: 15em; height:11em ;">
-            <div class="card-body">
-              <h5 class="card-title">추천코스</h5>
-              <p class="card-text">어딜가야할지 모르겠다면 저희한테 맡겨보는건 어떨까요! 가장 최적의 여행 동선을 만들어 드립니다!</p>
-              <a href="http://127.0.0.1:8000/tourSpot/category/%EC%B6%94%EC%B2%9C%EC%BD%94%EC%8A%A4/" class="btn btn-primary" style="text-align: center;"> 추천 코스 더보기</a>
-            </div>
-         </div>
         </div>
-    <hr/>
-    <!--
-    {% for p in category_posts %}
-    <h4><a href="{{ p.get_absolute_urls }}">{{ p.place }}</a></h4>
-    <h5>{{ p.location }}</h5>
-    {% endfor %}
-    -->
-    <h4> {{category}} </h4>
 
-    <div class="btn-group-vertical" role="group" aria-label="Vertical button group" style="margin-left: 20em; margin-right:3wm; margin: 5em;">
-        {% for p in category_posts %}
-        <a href="{{ p.get_absolute_urls }}" class="btn btn-light" style="text-align: center;"> {{ p.place }} <br> {{ p.location }} </a>
-        {% endfor %}
+
+
+        <div class="card">
+          <img
+            src="https://thumbnails.production.thenounproject.com/h6cVO95aIynep0PURKQFYbB0Dhk=/fit-in/1000x1000/photos.production.thenounproject.com/photos/5E84DAC3-59B0-4B3F-AD1B-02171F1E7D6C.jpg"
+            class="card-img-top" alt="..." style="width: 15em; height:11em ;">
+          <div class="row">
+            <div class="card-body">
+              <div class="top">
+                <h5 class="card-title">레포츠</h5>
+                <p class="card-text">leisure + sport 즉 leiport는 여가를 즐기며 운동을 하는 것입니다. 즐겁게 운동 한판 어떠세요?</p>
+              </div>
+              <div class="bottom">
+                <a href="http://127.0.0.1:8000/tourSpot/category/%EB%A0%88%ED%8F%AC%EC%B8%A0/" class="btn btn-primary"
+                  style="text-align: center; position: relative;"> 레포츠 더보기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="card">
+          <img
+            src="https://thumbnails.production.thenounproject.com/LqTpboMw1p13RzzoN5P9e8-XpoE=/fit-in/1000x1000/photos.production.thenounproject.com/photos/5EF0B57C-1B8F-414C-BAD8-82516E8C94B8.jpg"
+            class="card-img-top" alt="..." style="width: 15em; height:11em ;">
+          <div class="row">
+            <div class="card-body">
+              <div class="top">
+                <h5 class="card-title">쇼핑</h5>
+                <p class="card-text">이것도 사고싶고, 저것도 사고싶고 놀러온 김에 하고 싶은 쇼핑을 즐겨봅시다!</p>
+              </div>
+              <div class="bottom">
+                <a href="http://127.0.0.1:8000/tourSpot/category/%EC%87%BC%ED%95%91/" class="btn btn-primary"
+                  style="text-align: center; position: relative;"> 쇼핑 더보기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://thumbnails.production.thenounproject.com/qpGNRyGXHfIPCky9tJ4JT2W_cIw=/fit-in/1000x1000/photos.production.thenounproject.com/photos/11281306-34FE-4B32-996A-B4EECD4C3794.jpg"
+            class="card-img-top" alt="..." style="width: 15em; height:11em ;">
+          <div class="row">
+            <div class="card-body">
+              <div class="top">
+                <h5 class="card-title">음식</h5>
+                <p class="card-text">식도락을 떠나보시는건 어떠신가요?</p>
+              </div>
+              <div class="bottom">
+                <a href="http://127.0.0.1:8000/tourSpot/category/%EC%9D%8C%EC%8B%9D/" class="btn btn-primary"
+                  style="text-align: center; position: relative;"> 음식 더보기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <img
+            src="https://thumbnails.production.thenounproject.com/wv3aTxDARKL3m0ssm_o2hYSNzrU=/fit-in/1000x1000/photos.production.thenounproject.com/photos/CE174C4D-2C37-4105-A8C7-41468AEB761A.jpg"
+            class="card-img-top" alt="..." style="width: 15em; height:11em ;">
+          <div class="row">
+            <div class="card-body">
+              <div class="top">
+                <h5 class="card-title">숙박</h5>
+                <p class="card-text">호캉스를 좋아하신다면 쾌적한 호텔에서 하룻밤 어떠신가요?</p>
+              </div>
+              <div class="bottom">
+                <a href="http://127.0.0.1:8000/tourSpot/category/%EC%88%99%EB%B0%95/" class="btn btn-primary"
+                  style="text-align: center; position: relative;"> 숙박 더보기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://thumbnails.production.thenounproject.com/XsC1nyTE5CjRqQW5l388bcsG59M=/fit-in/1000x1000/photos.production.thenounproject.com/photos/6B81E5C4-1A90-47BC-9ADB-84705491723D.jpg"
+            class="card-img-top" alt="..." style="width: 15em; height:11em ;">
+          <div class="row">
+            <div class="card-body">
+              <div class="top">
+                <h5 class="card-title">추천코스</h5>
+                <p class="card-text">어딜가야할지 모르겠다면 저희한테 맡겨보는건 어떨까요! 가장 최적의 여행 동선을 만들어 드립니다!</p>
+              </div>
+              <div class="bottom">
+                <a href="http://127.0.0.1:8000/tourSpot/category/%EC%B6%94%EC%B2%9C%EC%BD%94%EC%8A%A4/"
+                  class="btn btn-primary" style="text-align: center; position: relative;">추천코스 더보기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+      <h4>{{category}}</h4>
+
+
+
+
+
+      {% for p in category_posts %}
+      <div class="card">
+        <div class="card-header">
+          {{p.category}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><b>{{ p.place }}</b></h5>
+          <p class="card-text">{{ p.location }}</p>
+          <a href="{{ p.get_absolute_urls }}" class="btn btn-outline-primary btn-sm">Go detail!</a>
+
+        </div>
+      </div>
+      {% endfor %}
+
+
+
+
+
+
     </div>
+  </section>
 
+
+
+  <!-- Contact-->
+  <section class="contact-section bg-black">
+    <div class="social d-flex justify-content-center">
+      <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+      <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+      <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer-->
+  <footer class="footer bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5">Copyright &copy; 이니수니 Website 2022</div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="../../static/main/JS/scripts.js"></script>
+  
+
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
 </html>
