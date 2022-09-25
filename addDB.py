@@ -42,16 +42,7 @@ def main():
                         like = False
                     )
 
-    with open('withTrouble.csv',encoding='UTF8')as in_file:
-        data_reader = csv.reader(in_file)
-        next(data_reader,None)
-        tourSpots = TourSpot.objects.all()
-        for row in data_reader:
-            if len(row)==0:continue
-            for col in len(row):
-                Option.objects.create(
-                    name = row[0]
-                )
+
 
             
 
