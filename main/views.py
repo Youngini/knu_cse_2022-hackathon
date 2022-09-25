@@ -7,7 +7,7 @@ from django.shortcuts import render,redirect
 from django.db import models
 from .models import TourSpot,Category,Option
 from django.views.decorators.csrf import csrf_exempt
-import pandas as pd
+ 
 
 
 # Create your views here.

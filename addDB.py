@@ -40,6 +40,8 @@ def main():
                         like = False
                     )
 
+<<<<<<< HEAD
+=======
     with open('withTrouble.csv',encoding='UTF8')as in_file:
         data_reader = csv.reader(in_file)
         next(data_reader,None)
@@ -52,7 +54,9 @@ def main():
                 Option.objects.create(
                     tourspot = TourSpot.objects.get(place = row[0]),
                     name = row[col],
+>>>>>>> de810ca98161f47993748f057658cf9424fa5fcd
                 )
+
 
             
 
